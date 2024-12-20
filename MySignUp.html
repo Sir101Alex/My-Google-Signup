@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+.agozie {
+    background-image: url(./sign\ up\ wallpaper.jpg);
+        background-blend-mode: darken;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+ .all {
+    width: 30%;
+        margin: auto;
+        padding: 20px;
+        color:  whitesmoke;
+        z-index: 99;
+        height: 600px;
+        border-radius: 20px;
+        background-color: rgba(13, 13, 14, 0.701);
+    }
+.use, .mail, .pass {
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.inp {
+    padding: 12px;
+    width: 80%;
+    border-radius: 7px;
+    display: block;
+    color: white;
+    margin-left: 30px;
+    background-color: rgb(41, 39, 39);
+    color: white;
+    border: none;
+    margin-top: 20px;
+}
+.sign-up {
+  width: 85%;
+  border-radius: 10px;
+  padding: 15px ;
+  font-size: 100%;
+  margin: 30px ;
+  background-color: blueviolet;
+  color: white;
+  cursor:pointer;
+  text-align: center;
+}
+.or {
+    text-align: center;
+}
+.img {
+    padding-left: 50px;
+}
+.sign {
+    text-align: center;
+    
+}
+</style>
+<body>
+    <div class="agozie">
+        <div class="all">
+            <h1 class="sign">Sign Up</h1>
+            <h3 class="use">Username</h3>
+            <input type="user" id="user" class="inp" placeholder="Alexander Joseph">
+            <h3 class="mail">Email</h3>
+            <input type="email" id="mail" class="inp" placeholder="alex***seph1350@gmail.com">
+            <h3 class="pass">Password</h3>
+            <input type="password" id="password" class="inp" placeholder="6+ characters required"><br><br>
+            <button class="sign-up" onclick="signup()"><b>Sign Up</b></button>
+            <h3 class="or">OR</h3><br>
+            <img class="img" src="google 2.png" alt="error">
+            <img class="img" src="sign.fb.png" alt="error">
+        </div>
+    </div>
+    <div id="show"></div>
+
+</body>
+</html>
+<script>
+
+    let clients = []
+    let users = localStorage.getItem('users')
+    let conusers = JSON.parse(users)
+    if (conusers && conusers.length > 0 ){
+        clients = conusers
+        console.log(clients)
+    }
+    let User = document.getElementById("user")
+    let mail = document.getElementById("mail")
+    let password = document.getElementById("password")
+
+    function signup() {
+        let client = {
+            user: user.value,
+            mail: mail.value,
+            password: password.value
+
+        }
+        clients.push(client)
+        localStorage.setItem("users", JSON.stringify(clients))
+        alert("Welcome to AGOZIE'S VERIFIED WEBSITE ........ H'v a nice day ahead.")
+        console.log(client);        
+    }
+</script>
